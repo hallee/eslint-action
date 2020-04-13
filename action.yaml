@@ -1,0 +1,15 @@
+name: 'Run ESLint'
+description: 'Run ESLint'
+inputs:
+  repo-token:
+    description: 'Access to your github repository. Should be secrets.GITHUB_TOKEN '
+    required: true
+  source-root:
+    description: 'change into the given sub dir to perform this scan.'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+  - "${{ inputs.repo-token }}"
+  - "${{ inputs.source-root }}"
