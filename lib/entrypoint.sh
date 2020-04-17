@@ -14,5 +14,4 @@ cd $PROJECT_DIRECTORY
 
 npm install
 
-
 NODE_PATH=node_modules node /action/lib/run.js
