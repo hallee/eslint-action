@@ -8,7 +8,7 @@ Neat! Bet your CI doesn't do that.
 
 ## Usage
 
-`.github/lint.yml`:
+`.github/workflows/lint.yml`:
 
 ```yml
 name: Lint
@@ -21,6 +21,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: hallee/eslint-action@master
-        with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
