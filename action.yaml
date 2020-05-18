@@ -1,15 +1,18 @@
-name: 'Run ESLint'
-description: 'Run ESLint'
+name: ESLint Action
+description: Lint your Javascript projects with inline lint error annotations on pull requests.
+branding:
+  icon: code
+  color: yellow
 inputs:
   repo-token:
-    description: 'Access to your github repository. Should be secrets.GITHUB_TOKEN '
+    description: GitHub repository token for publishing inline lint annotations. Should be secrets.GITHUB_TOKEN.
     required: true
   source-root:
-    description: 'change into the given sub dir to perform this scan.'
+    description: Root directory to lint files in.
     required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: docker
+  image: Dockerfile
   args:
   - "${{ inputs.repo-token }}"
   - "${{ inputs.source-root }}"
