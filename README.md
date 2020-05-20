@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: hallee/eslint-action@master
+      - uses: hallee/eslint-action@v1.0.1
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
           source-root: optional-sub-dir
