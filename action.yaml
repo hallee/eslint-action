@@ -10,9 +10,13 @@ inputs:
   source-root:
     description: Root directory to lint files in.
     required: false
+  extensions:
+    description: File extensions to run against.
+    required: false
 runs:
   using: docker
   image: Dockerfile
   args:
   - "${{ inputs.repo-token }}"
   - "${{ inputs.source-root }}"
+  - "${{ inputs.extensions }}"
